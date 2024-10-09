@@ -6,68 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Princípios que Distanciam o Homem de Deus - E-book Exclusivo</title>
     <style>
+        /* Definições gerais para tornar a aparência moderna e responsiva */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f7f9fc;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
         header {
-            background-color: #1d3557;
+            background-color: #102a43;
             color: #fff;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 20px;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin: 0;
-            line-height: 1.2;
+            font-weight: 700;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         .intro {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
         }
 
         .intro img {
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .intro-text {
-            margin-top: 20px;
-            max-width: 700px;
+            margin-top: 30px;
+            max-width: 750px;
         }
 
         .intro-text h2 {
             font-size: 2.2em;
-            color: #1d3557;
+            color: #102a43;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .intro-text p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #4a4a4a;
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #555;
         }
 
         .cta-button {
@@ -79,8 +80,8 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
         }
 
         .cta-button:hover {
@@ -90,6 +91,7 @@
         .price {
             font-size: 1.5em;
             color: #e63946;
+            font-weight: bold;
             margin: 10px 0;
         }
 
@@ -99,20 +101,22 @@
             border-radius: 10px;
             text-align: center;
             margin: 30px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .countdown {
             font-size: 1.5em;
             color: #d62839;
             margin-top: 10px;
+            font-weight: bold;
         }
 
         .benefits {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             margin: 50px 0;
+            gap: 20px;
         }
 
         .benefit-item {
@@ -120,10 +124,9 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            flex: 0 0 30%;
+            transition: transform 0.3s ease;
         }
 
         .benefit-item:hover {
@@ -131,13 +134,13 @@
         }
 
         .benefit-item h3 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #1d3557;
             margin-bottom: 10px;
         }
 
         .benefit-item p {
-            font-size: 1em;
+            font-size: 1.1em;
             color: #555;
         }
 
@@ -146,48 +149,49 @@
             padding: 50px;
             border-radius: 10px;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: space-between;
             margin: 50px 0;
         }
 
         .author-section img {
-            width: 150px;
-            height: auto;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .author-text {
             max-width: 800px;
+            margin-left: 30px;
         }
 
         .author-text h3 {
-            font-size: 2em;
+            font-size: 2.2em;
             color: #1d3557;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .author-text p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #555;
+            line-height: 1.7;
         }
 
         .testimonials-section {
             background-color: #fff;
             padding: 50px;
             border-radius: 10px;
-            margin: 50px 0;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .testimonials-section h2 {
             font-size: 2.5em;
             color: #1d3557;
             margin-bottom: 30px;
+            font-weight: bold;
         }
 
         .testimonial {
@@ -196,19 +200,21 @@
             border-radius: 10px;
             margin: 20px auto;
             max-width: 800px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #555;
+            line-height: 1.6;
         }
 
         .testimonial strong {
             display: block;
             margin-top: 10px;
             color: #1d3557;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
         .effects-section {
@@ -216,12 +222,14 @@
             padding: 50px;
             border-radius: 10px;
             text-align: center;
+            margin: 50px 0;
         }
 
         .effects-section h2 {
             font-size: 2.5em;
             color: #1d3557;
             margin-bottom: 30px;
+            font-weight: bold;
         }
 
         .effect-item {
@@ -229,21 +237,22 @@
         }
 
         .effect-item h3 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #e63946;
+            font-weight: bold;
         }
 
         .effect-item p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #555;
+            line-height: 1.7;
         }
 
         footer {
-            background-color: #1d3557;
+            background-color: #102a43;
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            margin-top: 20px;
         }
 
         footer p {
@@ -261,61 +270,68 @@
         }
 
         .contact-info {
-            padding: 20px;
+            padding: 30px;
             background-color: #f1faee;
             border-radius: 10px;
-            margin: 30px 0;
             text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsividade */
+        .contact-info h3 {
+            font-size: 2em;
+            color: #1d3557;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilos responsivos */
         @media (max-width: 768px) {
             .benefit-item {
-                width: 100%;
+                flex: 0 0 100%;
             }
 
             .author-section {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
 
             .author-section img {
                 margin-bottom: 20px;
             }
 
+            .author-text {
+                margin-left: 0;
+            }
+
             .intro-text h2 {
                 font-size: 1.8em;
-            }
-
-            .intro-text p {
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            .intro-text h2 {
-                font-size: 1.5em;
             }
 
             .cta-button {
                 padding: 12px 30px;
                 font-size: 1em;
             }
+        }
 
-            .benefit-item h3 {
-                font-size: 1.3em;
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
             }
 
-            .testimonial p {
-                font-size: 1em;
-            }
-
-            .price {
-                font-size: 1.2em;
+            .intro-text h2 {
+                font-size: 1.6em;
             }
         }
     </style>
@@ -331,9 +347,9 @@
         <div class="intro">
             <img src="imagens/Design sem nome.png" alt="Capa do E-book">
             <div class="intro-text">
-                <h2>Transforme sua Vida Espiritual</h2>
-                <p>Descubra os princípios que podem estar te afastando de Deus e como revertê-los. Este e-book é um
-                    guia prático e profundo para aqueles que buscam uma conexão mais íntima e verdadeira com o Criador.</p>
+                <h2>Descubra como superar as barreiras espirituais</h2>
+                <p>Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia
+                    prático para restabelecer e fortalecer sua conexão espiritual.</p>
                 <a class="cta-button" href="https://pay.hotmart.com/I95306645C" target="_blank">Comprar E-book</a>
             </div>
         </div>
@@ -345,72 +361,104 @@
             <div class="countdown">Faltam: <span id="countdown"></span></div>
         </div>
 
+        <!-- PREFÁCIO -->
+        <div class="preface">
+            <h2>PREFÁCIO</h2>
+            <p>Ler e reler este trabalho literário foi um prazer e uma honra, pois tenho investido minha vida em pregar
+                a Palavra e levar nações ao conhecimento de Deus. Angola tem sido o foco principal de meu ministério.
+                Ver um jovem teólogo angolano escrevendo um trabalho tão rico me encheu de alegria. Este livro apresenta
+                o plano de Deus na criação e a queda do homem; o trabalho redentivo de Cristo na salvação e a possibilidade
+                dos redimidos viverem uma vida plena neste mundo, guiados pelo Espírito de Cristo.</p>
+            <p><strong>Pr. Ismael Mendes Ferreira</strong>, missionário de tempo integral em JOCUM desde 1987.</p>
+        </div>
+
+        <!-- BENEFÍCIOS -->
         <div class="benefits">
             <div class="benefit-item">
-                <h3>Compreensão Profunda</h3>
-                <p>Entenda os fatores que influenciam sua relação com Deus e como abordá-los.</p>
+                <h3>Conexão com Deus</h3>
+                <p>Aprenda a superar barreiras espirituais que te distanciam de uma conexão verdadeira com o Criador.</p>
             </div>
             <div class="benefit-item">
-                <h3>Práticas Eficazes</h3>
-                <p>Aprenda métodos e práticas que podem fortalecer sua fé e devoção.</p>
+                <h3>Guias Práticos</h3>
+                <p>Conteúdo prático para implementar na sua vida diária, com foco no crescimento espiritual.</p>
             </div>
             <div class="benefit-item">
-                <h3>Testemunhos Inspiradores</h3>
-                <p>Leia histórias de pessoas que mudaram suas vidas seguindo os princípios apresentados.</p>
+                <h3>Transformação Pessoal</h3>
+                <p>Entenda como a aplicação dos princípios divinos pode transformar sua vida em todas as áreas.</p>
             </div>
         </div>
 
+        <!-- SOBRE O AUTOR -->
         <div class="author-section">
             <img src="imagens/imagem Azevedo.webp" alt="Foto do Autor">
             <div class="author-text">
                 <h3>Sobre o Autor</h3>
                 <p>Azevedo Camacuto Chivela é palestrante e especialista em capacitação de líderes religiosos.
-                     Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar
-                      os princípios de Deus em seu dia a dia.
-                      Atualmente, é professor do Seminário Teológico Batista do Huambo e líder de Evangelismo na
-                       Igreja Batista Vida Nova do Huambo- Angola.</p>
+                    Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar
+                    os princípios de Deus no dia a dia. Atualmente, é professor do Seminário Teológico Batista do Huambo
+                    e líder de Evangelismo na Igreja Batista Vida Nova do Huambo- Angola.</p>
             </div>
         </div>
 
+        <!-- TESTEMUNHOS -->
         <div class="testimonials-section">
             <h2>Depoimentos de Leitores</h2>
+
             <div class="testimonial">
-                <p>"Este e-book mudou a minha perspectiva sobre minha fé! Recomendo a todos!"</p>
-                <strong>– Maria Silva</strong>
+                <p>"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que
+                    estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
+                <strong>– Dr. Victor Sanguyela</strong>
             </div>
+
             <div class="testimonial">
-                <p>"Comprei e já estou aplicando os princípios em minha vida. Gratidão!"</p>
-                <strong>– João Pereira</strong>
+                <p>"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado
+                    a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
+                <strong>– Evangelista Frederico Ngonga</strong>
+            </div>
+
+            <div class="testimonial">
+                <p>"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece
+                    direções claras para uma vida espiritual saudável e próspera."</p>
+                <strong>– Dr. Aderito Mauricio</strong>
+            </div>
+
+            <div class="testimonial">
+                <p>"Poucos livros impactaram tanto minha jornada espiritual como este. Os ensinamentos são práticos e
+                    facilmente aplicáveis no dia a dia. Uma verdadeira bênção!"</p>
+                <strong>– Dr. Adolfo Livongue</strong>
+            </div>
+
+            <div class="testimonial">
+                <p>"Este e-book me ajudou a superar desafios que pareciam insuperáveis. Com uma abordagem clara e objetiva,
+                    ele trouxe uma nova perspectiva para minha vida com Deus."</p>
+                <strong>– Irmão Emisson Cacuete</strong>
             </div>
         </div>
 
+        <!-- EFEITOS TRANSFORMADORES -->
         <div class="effects-section">
-            <h2>Benefícios que Você Pode Esperar</h2>
+            <h2>Efeitos Transformadores</h2>
             <div class="effect-item">
-                <h3>Restauração da Fé</h3>
-                <p>Recupere a conexão com Deus e fortaleça sua espiritualidade.</p>
+                <h3>Redescubra Sua Fé</h3>
+                <p>Volte ao primeiro amor e aprofunde sua relação com Deus.</p>
             </div>
             <div class="effect-item">
-                <h3>Clareza Espiritual</h3>
-                <p>Obtenha uma visão mais clara sobre sua vida espiritual e propósitos.</p>
-            </div>
-            <div class="effect-item">
-                <h3>Comunidade de Apoio</h3>
-                <p>Junte-se a uma comunidade de leitores que compartilham suas experiências.</p>
+                <h3>Superação de Desafios Espirituais</h3>
+                <p>Supere as barreiras espirituais que têm te impedido de crescer na fé.</p>
             </div>
         </div>
 
+        <!-- CONTATO -->
         <div class="contact-info">
-            <!-- Informações de Contato -->
-    <section class="contact-info">
-        <h3>Contatos</h3>
-        <p>WhatsApp: <a href="https://wa.me/934014288" style="color: #e74c3c;">934 014 288</a></p>
-        <p>E-mail: <a href="mailto:aureliochivelachivela@gmail.com" style="color: #e74c3c;">aureliochivelachivela@gmail.com</a></p>
-    </section>
+            <h3>Contatos</h3>
+            <p>WhatsApp: <a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
+            <p>E-mail: <a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
         </div>
 
+        <!-- GARANTIA -->
         <div class="guarantee">
-            <p><strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até 7 dias.</p>
+            <p><strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até
+                7 dias.</p>
         </div>
     </div>
 
