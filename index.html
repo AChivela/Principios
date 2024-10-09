@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princípios que Distanciam o Homem de Deus - E-book Exclusivo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #1d3557;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .intro img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-text {
+            margin-top: 20px;
+            max-width: 700px;
+        }
+
+        .intro-text h2 {
+            font-size: 2.2em;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        .cta-button {
+            background-color: #e63946;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d62839;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #e63946;
+            margin: 10px 0;
+        }
+
+        .promotion {
+            background-color: #ffe5e5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown {
+            font-size: 1.5em;
+            color: #d62839;
+            margin-top: 10px;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+
+        .benefit-item {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5em;
+            color: #1d3557;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .author-section {
+            background-color: #f1faee;
+            padding: 50px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .author-section img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .author-text {
+            max-width: 800px;
+        }
+
+        .author-text h3 {
+            font-size: 2em;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .author-text p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .testimonials-section {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5em;
+            color: #1d3557;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            background-color: #f1faee;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .testimonial strong {
+            display: block;
+            margin-top: 10px;
+            color: #1d3557;
+            font-size: 1.1em;
+        }
+
+        .effects-section {
+            background-color: #e9ecef;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .effects-section h2 {
+            font-size: 2.5em;
+            color: #1d3557;
+            margin-bottom: 30px;
+        }
+
+        .effect-item {
+            margin: 20px 0;
+        }
+
+        .effect-item h3 {
+            font-size: 1.8em;
+            color: #e63946;
+        }
+
+        .effect-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #1d3557;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #a8dadc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            padding: 20px;
+            background-color: #f1faee;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .benefit-item {
+                width: 100%;
+            }
+
+            .author-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .author-section img {
+                margin-bottom: 20px;
+            }
+
+            .intro-text h2 {
+                font-size: 1.8em;
+            }
+
+            .intro-text p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .intro-text h2 {
+                font-size: 1.5em;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+
+            .benefit-item h3 {
+                font-size: 1.3em;
+            }
+
+            .testimonial p {
+                font-size: 1em;
+            }
+
+            .price {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Princípios que Distanciam o Homem de Deus</h1>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <img src="imagens/Design sem nome.png" alt="Capa do E-book">
+            <div class="intro-text">
+                <h2>Transforme sua Vida Espiritual</h2>
+                <p>Descubra os princípios que podem estar te afastando de Deus e como revertê-los. Este e-book é um
+                    guia prático e profundo para aqueles que buscam uma conexão mais íntima e verdadeira com o Criador.</p>
+                <a class="cta-button" href="https://pay.hotmart.com/I95306645C" target="_blank">Comprar E-book</a>
+            </div>
+        </div>
+
+        <div class="promotion">
+            <h2>Oferta Especial</h2>
+            <p class="price">Apenas R$ 30,00 <s>R$ 50,00</s> / € 7,42 <s>€ 15,00</s></p>
+            <p>Essa oferta é válida por tempo limitado!</p>
+            <div class="countdown">Faltam: <span id="countdown"></span></div>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-item">
+                <h3>Compreensão Profunda</h3>
+                <p>Entenda os fatores que influenciam sua relação com Deus e como abordá-los.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>Práticas Eficazes</h3>
+                <p>Aprenda métodos e práticas que podem fortalecer sua fé e devoção.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>Testemunhos Inspiradores</h3>
+                <p>Leia histórias de pessoas que mudaram suas vidas seguindo os princípios apresentados.</p>
+            </div>
+        </div>
+
+        <div class="author-section">
+            <img src="imagens/imagem Azevedo.webp" alt="Foto do Autor">
+            <div class="author-text">
+                <h3>Sobre o Autor</h3>
+                <p>Azevedo Camacuto Chivela é palestrante e especialista em capacitação de líderes religiosos.
+                     Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar
+                      os princípios de Deus em seu dia a dia.
+                      Atualmente, é professor do Seminário Teológico Batista do Huambo e líder de Evangelismo na
+                       Igreja Batista Vida Nova do Huambo- Angola.</p>
+            </div>
+        </div>
+
+        <div class="testimonials-section">
+            <h2>Depoimentos de Leitores</h2>
+            <div class="testimonial">
+                <p>"Este e-book mudou a minha perspectiva sobre minha fé! Recomendo a todos!"</p>
+                <strong>– Maria Silva</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Comprei e já estou aplicando os princípios em minha vida. Gratidão!"</p>
+                <strong>– João Pereira</strong>
+            </div>
+        </div>
+
+        <div class="effects-section">
+            <h2>Benefícios que Você Pode Esperar</h2>
+            <div class="effect-item">
+                <h3>Restauração da Fé</h3>
+                <p>Recupere a conexão com Deus e fortaleça sua espiritualidade.</p>
+            </div>
+            <div class="effect-item">
+                <h3>Clareza Espiritual</h3>
+                <p>Obtenha uma visão mais clara sobre sua vida espiritual e propósitos.</p>
+            </div>
+            <div class="effect-item">
+                <h3>Comunidade de Apoio</h3>
+                <p>Junte-se a uma comunidade de leitores que compartilham suas experiências.</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <!-- Informações de Contato -->
+    <section class="contact-info">
+        <h3>Contatos</h3>
+        <p>WhatsApp: <a href="https://wa.me/934014288" style="color: #e74c3c;">934 014 288</a></p>
+        <p>E-mail: <a href="mailto:aureliochivelachivela@gmail.com" style="color: #e74c3c;">aureliochivelachivela@gmail.com</a></p>
+    </section>
+        </div>
+
+        <div class="guarantee">
+            <p><strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até 7 dias.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Editora Muenho. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+    </footer>
+
+    <script>
+        // Configuração do contador regressivo (para fins de exemplo, define 1 hora)
+        const countdownElement = document.getElementById('countdown');
+        const countdownTime = new Date().getTime() + 3600 * 1000; // 1 hora a partir de agora
+
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownTime - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                countdownElement.innerHTML = "Oferta encerrada!";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
