@@ -4,488 +4,922 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princípios que Distanciam o Homem de Deus - E-book Exclusivo</title>
+    <title>Azevedo Chivela - Autor, Teólogo e Palestrante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Definições gerais para tornar a aparência moderna e responsiva */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f9fc;
+        /* Variáveis de cores e fontes */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #e63946;
+            --accent-color: #f6ad55;
+            --light-color: #f7f9fc;
+            --dark-color: #2d3748;
+            --text-color: #4a5568;
+            --white: #ffffff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-heading: 'Georgia', serif;
+        }
+
+        /* Reset e estilos base */
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: #102a43;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
         }
 
-        header h1 {
-            font-size: 2.8em;
-            margin: 0;
-            font-weight: 700;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
         }
 
-        .intro {
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        .intro img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .intro-text {
-            margin-top: 30px;
-            max-width: 750px;
-        }
-
-        .intro-text h2 {
-            font-size: 2.2em;
-            color: #102a43;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .intro-text p {
-            font-size: 1.2em;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        .cta-button {
-            background-color: #e63946;
-            color: #fff;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 25px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #d62839;
-        }
-
-        .price {
-            font-size: 1.5em;
-            color: #e63946;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .promotion {
-            background-color: #ffe5e5;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 30px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .countdown {
-            font-size: 1.5em;
-            color: #d62839;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .benefits {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 50px 0;
-            gap: 20px;
-        }
-
-        .benefit-item {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            flex: 0 0 30%;
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: scale(1.05);
-        }
-
-        .benefit-item h3 {
-            font-size: 1.8em;
-            color: #1d3557;
-            margin-bottom: 10px;
-        }
-
-        .benefit-item p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .author-section {
-            background-color: #f1faee;
-            padding: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin: 50px 0;
+            align-items: center;
         }
 
-        .author-section img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
         }
 
-        .author-text {
-            max-width: 800px;
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
             margin-left: 30px;
         }
 
-        .author-text h3 {
-            font-size: 2.2em;
-            color: #1d3557;
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), 
+                        url('imagens/hero-bg.jpg') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            font-weight: bold;
+            font-family: var(--font-heading);
         }
 
-        .author-text p {
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.7;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
 
-        .testimonials-section {
-            background-color: #fff;
-            padding: 50px;
-            border-radius: 10px;
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Author */
+        .about-author {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-family: var(--font-heading);
         }
 
-        .testimonials-section h2 {
-            font-size: 2.5em;
-            color: #1d3557;
-            margin-bottom: 30px;
-            font-weight: bold;
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
 
-        .testimonial {
-            background-color: #f1faee;
+        .author-image {
+            flex: 0 0 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-bio {
+            flex: 1;
+        }
+
+        .author-bio h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .author-bio p {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Books Section */
+        .books {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-info {
             padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .testimonial p {
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.6;
+        .book-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
 
-        .testimonial strong {
-            display: block;
-            margin-top: 10px;
-            color: #1d3557;
-            font-size: 1.2em;
-            font-weight: bold;
+        .book-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
         }
 
-        .effects-section {
-            background-color: #e9ecef;
-            padding: 50px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 50px 0;
+        .book-description {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-color);
         }
 
-        .effects-section h2 {
-            font-size: 2.5em;
-            color: #1d3557;
-            margin-bottom: 30px;
-            font-weight: bold;
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
-        .effect-item {
-            margin: 20px 0;
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .effect-item h3 {
-            font-size: 2em;
-            color: #e63946;
-            font-weight: bold;
-        }
-
-        .effect-item p {
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        footer {
-            background-color: #102a43;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
-        }
-
-        footer a {
-            color: #a8dadc;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-info {
+        .testimonial-card {
+            background-color: var(--light-color);
             padding: 30px;
-            background-color: #f1faee;
             border-radius: 10px;
-            text-align: center;
-            margin: 30px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(230, 57, 70, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: var(--font-heading);
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Blog/Articles */
+        .articles {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.1);
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .contact-info h3 {
-            font-size: 2em;
-            color: #1d3557;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 15px;
-            font-weight: bold;
         }
 
-        .contact-info p {
-            font-size: 1.2em;
-            color: #555;
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
         }
 
-        .contact-info a {
-            color: #e63946;
-            text-decoration: none;
-            font-weight: bold;
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
         }
 
-        /* Estilos responsivos */
-        @media (max-width: 768px) {
-            .benefit-item {
-                flex: 0 0 100%;
-            }
+        .contact-form textarea {
+            min-height: 150px;
+        }
 
-            .author-section {
+        /* Newsletter */
+        .newsletter {
+            padding: 50px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .author-content {
                 flex-direction: column;
-                text-align: center;
             }
 
-            .author-section img {
-                margin-bottom: 20px;
-            }
-
-            .author-text {
-                margin-left: 0;
-            }
-
-            .intro-text h2 {
-                font-size: 1.8em;
-            }
-
-            .cta-button {
-                padding: 12px 30px;
-                font-size: 1em;
+            .author-image {
+                flex: 0 0 auto;
+                margin-bottom: 30px;
             }
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.2em;
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
 
-            .intro-text h2 {
-                font-size: 1.6em;
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 5px;
+                width: 100%;
+            }
+
+            .newsletter-form button {
+                padding: 12px 0;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 
 <body>
-
+    <!-- Header -->
     <header>
-        <h1>Princípios que Distanciam o Homem de Deus</h1>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Azevedo<span>Chivela</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#books">Livros</a></li>
+                    <li><a href="#articles">Artigos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="intro">
-            <img src="imagens/Design sem nome.png" alt="Capa do E-book">
-            <div class="intro-text">
-                <h2>Descubra como superar as barreiras espirituais</h2>
-                <p>Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia
-                    prático para restabelecer e fortalecer sua conexão espiritual.</p>
-                <a class="cta-button" href="https://pay.hotmart.com/I95306645C" target="_blank">Comprar E-book</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Conhecimento Teológico para Transformação Espiritual</h1>
+            <p>Explore os livros e artigos de Azevedo Chivela, dedicados ao crescimento espiritual e entendimento bíblico profundo.</p>
+            <a href="#books" class="btn">Ver Livros</a>
+        </div>
+    </section>
+
+    <!-- About Author -->
+    <section class="about-author" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre o Autor</h2>
+            <div class="author-content">
+                <div class="author-image">
+                    <img src="imagens/imagem Azevedo.webp" alt="Azevedo Chivela">
+                </div>
+                <div class="author-bio">
+                    <h3>Azevedo Camacuto Chivela</h3>
+                    <p>Teólogo, psicólogo e escritor angolano dedicado ao estudo e ensino das Escrituras Sagradas. Com formação acadêmica sólida e vasta experiência ministerial, Azevedo Chivela tem se destacado como um dos pensadores cristãos mais relevantes de sua geração.</p>
+                    <p>Atualmente serve como professor no Seminário Teológico Batista do Huambo e líder de Evangelismo na Igreja Batista Vida Nova do Huambo, Angola. Seus escritos abordam temas profundos da fé cristã com clareza e aplicação prática para a vida moderna.</p>
+                    <p>Além de sua atividade acadêmica e pastoral, Azevedo é palestrante requisitado em conferências e eventos teológicos, onde compartilha seus insights sobre espiritualidade, liderança cristã e formação de discípulos.</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="promotion">
-            <h2>Oferta Especial</h2>
-            <p class="price">Apenas R$ 30,00 <s>R$ 50,00</s> / € 7,42 <s>€ 15,00</s></p>
-            <p>Essa oferta é válida por tempo limitado!</p>
-            <div class="countdown">Faltam: <span id="countdown"></span></div>
-        </div>
-
-        <!-- PREFÁCIO -->
-        <div class="preface">
-            <h2>PREFÁCIO</h2>
-            <p>Ler e reler este trabalho literário foi um prazer e uma honra, pois tenho investido minha vida em pregar
-                a Palavra e levar nações ao conhecimento de Deus. Angola tem sido o foco principal de meu ministério.
-                Ver um jovem teólogo angolano escrevendo um trabalho tão rico me encheu de alegria. Este livro apresenta
-                o plano de Deus na criação e a queda do homem; o trabalho redentivo de Cristo na salvação e a possibilidade
-                dos redimidos viverem uma vida plena neste mundo, guiados pelo Espírito de Cristo.</p>
-            <p><strong>Pr. Ismael Mendes Ferreira</strong>, missionário de tempo integral em JOCUM desde 1987.</p>
-        </div>
-
-        <!-- BENEFÍCIOS -->
-        <div class="benefits">
-            <div class="benefit-item">
-                <h3>Conexão com Deus</h3>
-                <p>Aprenda a superar barreiras espirituais que te distanciam de uma conexão verdadeira com o Criador.</p>
-            </div>
-            <div class="benefit-item">
-                <h3>Guias Práticos</h3>
-                <p>Conteúdo prático para implementar na sua vida diária, com foco no crescimento espiritual.</p>
-            </div>
-            <div class="benefit-item">
-                <h3>Transformação Pessoal</h3>
-                <p>Entenda como a aplicação dos princípios divinos pode transformar sua vida em todas as áreas.</p>
-            </div>
-        </div>
-
-        <!-- SOBRE O AUTOR -->
-        <div class="author-section">
-            <img src="imagens/imagem Azevedo.webp" alt="Foto do Autor">
-            <div class="author-text">
-                <h3>Sobre o Autor</h3>
-                <p>Azevedo Camacuto Chivela é palestrante e especialista em capacitação de líderes religiosos.
-                    Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar
-                    os princípios de Deus no dia a dia. Atualmente, é professor do Seminário Teológico Batista do Huambo
-                    e líder de Evangelismo na Igreja Batista Vida Nova do Huambo- Angola.</p>
-            </div>
-        </div>
-
-        <!-- TESTEMUNHOS -->
-        <div class="testimonials-section">
-            <h2>Depoimentos de Leitores</h2>
-
-            <div class="testimonial">
-                <p>"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que
-                    estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
-                <strong>– Dr. Victor Sanguyela</strong>
-            </div>
-
-            <div class="testimonial">
-                <p>"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado
-                    a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
-                <strong>– Evangelista Frederico Ngonga</strong>
-            </div>
-
-            <div class="testimonial">
-                <p>"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece
-                    direções claras para uma vida espiritual saudável e próspera."</p>
-                <strong>– Dr. Aderito Mauricio</strong>
-            </div>
-
-            <div class="testimonial">
-                <p>"Poucos livros impactaram tanto minha jornada espiritual como este. Os ensinamentos são práticos e
-                    facilmente aplicáveis no dia a dia. Uma verdadeira bênção!"</p>
-                <strong>– Dr. Adolfo Livongue</strong>
-            </div>
-
-            <div class="testimonial">
-                <p>"Este e-book me ajudou a superar desafios que pareciam insuperáveis. Com uma abordagem clara e objetiva,
-                    ele trouxe uma nova perspectiva para minha vida com Deus."</p>
-                <strong>– Irmão Emisson Cacuete</strong>
+    <!-- Books Section -->
+    <section class="books" id="books">
+        <div class="container">
+            <h2 class="section-title">Livros Publicados</h2>
+            <div class="books-grid">
+                <!-- Book 1 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="imagens/Design sem nome.png" alt="Princípios que Distanciam o Homem de Deus">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Princípios que Distanciam o Homem de Deus</h3>
+                        <div class="book-price">R$ 30,00 / € 7,42</div>
+                        <p class="book-description">Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia prático para restabelecer e fortalecer sua conexão espiritual.</p>
+                        <a href="https://pay.hotmart.com/I95306645C" class="btn" target="_blank">Comprar Agora</a>
+                    </div>
+                </div>
+                
+                <!-- Book 2 - Placeholder for future books -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="imagens/book-placeholder.jpg" alt="Próximo Lançamento">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Próximo Lançamento</h3>
+                        <div class="book-price">Em breve</div>
+                        <p class="book-description">Novo livro em preparação. Cadastre-se para ser notificado quando estiver disponível.</p>
+                        <a href="#newsletter" class="btn">Avisar-me</a>
+                    </div>
+                </div>
+                
+                <!-- Book 3 - Placeholder for future books -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="imagens/book-placeholder.jpg" alt="Próximo Lançamento">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Próximo Lançamento</h3>
+                        <div class="book-price">Em breve</div>
+                        <p class="book-description">Novo projeto em desenvolvimento. Fique atento para mais informações.</p>
+                        <a href="#newsletter" class="btn">Avisar-me</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- EFEITOS TRANSFORMADORES -->
-        <div class="effects-section">
-            <h2>Efeitos Transformadores</h2>
-            <div class="effect-item">
-                <h3>Redescubra Sua Fé</h3>
-                <p>Volte ao primeiro amor e aprofunde sua relação com Deus.</p>
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
+                    <p class="testimonial-author">Dr. Victor Sanguyela</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
+                    <p class="testimonial-author">Evangelista Frederico Ngonga</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece direções claras para uma vida espiritual saudável e próspera."</p>
+                    <p class="testimonial-author">Dr. Aderito Mauricio</p>
+                </div>
             </div>
-            <div class="effect-item">
-                <h3>Superação de Desafios Espirituais</h3>
-                <p>Supere as barreiras espirituais que têm te impedido de crescer na fé.</p>
+        </div>
+    </section>
+
+    <!-- Articles/Blog -->
+    <section class="articles" id="articles">
+        <div class="container">
+            <h2 class="section-title">Artigos Recentes</h2>
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="imagens/article1.jpg" alt="Artigo 1">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">15 Junho 2023</div>
+                        <h3 class="article-title">Os Desafios da Fé no Mundo Contemporâneo</h3>
+                        <p class="article-excerpt">Como manter uma vida espiritual vibrante em meio às demandas da vida moderna e às transformações sociais...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="imagens/article2.jpg" alt="Artigo 2">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">28 Maio 2023</div>
+                        <h3 class="article-title">A Importância do Discipulado na Igreja Atual</h3>
+                        <p class="article-excerpt">Reflexões sobre o processo de formação de discípulos e seu papel fundamental no crescimento saudável das comunidades cristãs...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="imagens/article3.jpg" alt="Artigo 3">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-date">10 Abril 2023</div>
+                        <h3 class="article-title">Interpretação Bíblica: Entre a Tradição e a Inovação</h3>
+                        <p class="article-excerpt">Como equilibrar a fidelidade às tradições interpretativas com as novas abordagens hermenêuticas que surgem a cada geração...</p>
+                        <a href="#" class="read-more">Ler mais →</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- CONTATO -->
-        <div class="contact-info">
-            <h3>Contatos</h3>
-            <p>WhatsApp: <a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
-            <p>E-mail: <a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>Huambo, Angola</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <p><a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p><a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <input type="email" name="email" placeholder="Seu E-mail" required>
+                        <input type="text" name="subject" placeholder="Assunto">
+                        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- GARANTIA -->
-        <div class="guarantee">
-            <p><strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até
-                7 dias.</p>
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <h3>Assine nossa Newsletter</h3>
+            <p>Receba atualizações sobre novos livros, artigos e eventos.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Assinar</button>
+            </form>
         </div>
-    </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; Editora Muenho. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Azevedo<span>Chivela</span></div>
+                    <p>Portal oficial do autor Azevedo Chivela, dedicado ao compartilhamento de conhecimento teológico e reflexões espirituais para o crescimento cristão.</p>
+                    <p>© 2023 Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#books">Livros</a></li>
+                        <li><a href="#articles">Artigos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Huambo, Angola</p>
+                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Azevedo Chivela. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Configuração do contador regressivo (para fins de exemplo, define 1 hora)
-        const countdownElement = document.getElementById('countdown');
-        const countdownTime = new Date().getTime() + 3600 * 1000; // 1 hora a partir de agora
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
 
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = countdownTime - now;
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('show');
+        });
 
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainMenu.classList.contains('show')) {
+                        mainMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
 
-            countdownElement.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(countdown);
-                countdownElement.innerHTML = "Oferta encerrada!";
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
             }
-        }, 1000);
+        });
     </script>
 </body>
 
