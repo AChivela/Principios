@@ -216,26 +216,8 @@
                 <!-- Book Cover -->
                 <div class="flex justify-center">
                     <div class="book-3d">
-                        <div class="book-cover w-80 h-96 rounded-lg p-8 text-white flex flex-col justify-between relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                            <div class="relative z-10">
-                                <div class="text-center mb-8">
-                                    <div class="w-16 h-16 bg-yellow-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <h2 class="font-serif text-2xl font-bold mb-4 text-center leading-tight">
-                                    Princípios que Distanciam o Homem de Deus
-                                </h2>
-                                <div class="w-20 h-1 bg-yellow-400 mx-auto mb-6"></div>
-                            </div>
-                            <div class="relative z-10 text-center">
-                                <div class="text-sm opacity-80 mb-2">Autor</div>
-                                <div class="font-semibold">Azevedo Camacuto Chivela</div>
-                                <div class="text-xs opacity-60 mt-2">Teólogo • Psicólogo • Palestrante</div>
-                            </div>
+                        <div class="book-cover w-80 h-96 rounded-lg overflow-hidden relative bg-white">
+                            <img src="imagens/Design sem nome.png" alt="Capa do livro Princípios que Distanciam o Homem de Deus" class="w-full h-full object-contain">
                         </div>
                     </div>
                 </div>
@@ -273,9 +255,9 @@
                         </div>
 
                         <!-- CTA Button -->
-                        <button class="premium-button w-full text-black font-bold py-5 px-8 rounded-2xl text-xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <a href="https://pay.hotmart.com/I95306645C" target="_blank" class="premium-button w-full text-black font-bold py-5 px-8 rounded-2xl text-xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-block text-center">
                             <span class="relative z-10">🛒 GARANTIR MEU E-BOOK AGORA</span>
-                        </button>
+                        </a>
 
                         <!-- Guarantees -->
                         <div class="space-y-3 text-sm text-gray-600">
@@ -388,12 +370,7 @@
                         <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mb-8"></div>
                         
                         <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                            <div class="imagens/imagem Azevedo.webp" alt="Azevedo Chivela">
-                                
- <!-- <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                            <div class="author-image">-->
-                                
-                     <p>
+                            <p>
                                 <strong class="golden-accent font-serif text-xl">Azevedo Camacuto Chivela</strong> é uma autoridade reconhecida em liderança espiritual e desenvolvimento pessoal através dos princípios bíblicos.
                             </p>
                             <p>
@@ -418,10 +395,8 @@
                     
                     <div class="order-1 lg:order-2 flex justify-center">
                         <div class="relative">
-                            <div class="w-80 h-80 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 rounded-full flex items-center justify-center premium-shadow">
-                                <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                                </svg>
+                            <div class="w-80 h-80 rounded-full overflow-hidden premium-shadow bg-gray-100">
+                                <img src="imagens/imagem Azevedo.webp" alt="Azevedo Chivela" class="w-full h-full object-cover">
                             </div>
                             <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center premium-shadow">
                                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -585,9 +560,9 @@
                     </div>
                 </div>
                 
-                <button class="premium-button text-black font-bold py-6 px-12 rounded-2xl text-2xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <a href="https://pay.hotmart.com/I95306645C" target="_blank" class="premium-button text-black font-bold py-6 px-12 rounded-2xl text-2xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-block">
                     <span class="relative z-10">🚀 TRANSFORMAR MINHA VIDA AGORA</span>
-                </button>
+                </a>
                 
                 <div class="text-sm text-gray-600">
                     <p>✅ Pagamento 100% seguro • ✅ Acesso imediato • ✅ Garantia de 7 dias</p>
@@ -704,23 +679,13 @@
         
         // Purchase button handlers
         function initPurchaseButtons() {
-            document.querySelectorAll('button').forEach(button => {
-                if (button.textContent.includes('COMPRAR') || 
-                    button.textContent.includes('GARANTIR') || 
-                    button.textContent.includes('TRANSFORMAR')) {
-                    button.addEventListener('click', function() {
-                        // Add loading state
-                        const originalText = this.innerHTML;
-                        this.innerHTML = '<span class="relative z-10">🔄 Processando...</span>';
-                        this.disabled = true;
-                        
-                        setTimeout(() => {
-                            alert('🎉 Redirecionando para o pagamento seguro...\n\n✅ Pagamento via PIX ou Cartão\n✅ Acesso imediato após confirmação\n✅ Suporte dedicado incluído\n\n(Esta é uma demonstração da funcionalidade)');
-                            this.innerHTML = originalText;
-                            this.disabled = false;
-                        }, 2000);
-                    });
-                }
+            // Os botões agora são links diretos para o Hotmart
+            // Adicionar analytics ou tracking se necessário
+            document.querySelectorAll('a[href*="hotmart"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    // Opcional: adicionar tracking de conversão aqui
+                    console.log('Redirecionando para pagamento...');
+                });
             });
         }
         
@@ -768,7 +733,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97639e91c231e3bd',t:'MTc1NjM4MjEyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9763c276d152e3bd',t:'MTc1NjM4MzU5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
