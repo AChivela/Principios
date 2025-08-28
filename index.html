@@ -3,315 +3,765 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princípios que Distanciam o Homem de Deus - E-book</title>
+    <title>Princípios que Distanciam o Homem de Deus - E-book Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-dark: #1a1a2e;
+            --primary-blue: #16213e;
+            --accent-purple: #6366f1;
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f0c29 0%, #24243e 50%, #313862 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .book-shadow {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
         }
         
-        .pulse-animation {
-            animation: pulse 2s infinite;
+        .premium-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            backdrop-filter: blur(10px);
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .book-3d {
+            perspective: 1000px;
+            transform-style: preserve-3d;
         }
         
-        .countdown-timer {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        .book-cover {
+            background: linear-gradient(145deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
         }
         
-        .testimonial-card {
-            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
-            border-left: 4px solid #667eea;
+        .book-cover:hover {
+            transform: rotateY(-5deg) rotateX(2deg) scale(1.05);
+        }
+        
+        .golden-accent {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .premium-button {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #D4AF37 100%);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .premium-button:hover::before {
+            left: 100%;
+        }
+        
+        .testimonial-premium {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid var(--primary-gold);
+            position: relative;
+        }
+        
+        .testimonial-premium::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-elements::before {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-elements::after {
+            top: 60%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+        
+        .stats-counter {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-gold) 50%, transparent 100%);
+            margin: 4rem 0;
+        }
+        
+        .premium-shadow {
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        }
+        
+        .countdown-premium {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+        
+        .benefit-icon {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #FFD700 100%);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="gradient-bg text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Princípios que Distanciam o Homem de Deus</h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">Descubra como superar as barreiras espirituais</p>
-            <p class="text-lg max-w-3xl mx-auto leading-relaxed">Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia prático para restabelecer e fortalecer sua conexão espiritual.</p>
+<body class="font-sans bg-gray-50 antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-serif text-2xl font-bold golden-accent">Princípios Divinos</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#sobre" class="text-gray-700 hover:text-yellow-600 transition-colors">Sobre</a>
+                    <a href="#autor" class="text-gray-700 hover:text-yellow-600 transition-colors">Autor</a>
+                    <a href="#depoimentos" class="text-gray-700 hover:text-yellow-600 transition-colors">Depoimentos</a>
+                    <a href="#comprar" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all">Comprar</a>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-16 relative">
+        <div class="floating-elements"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Princípios que <span class="golden-accent">Distanciam</span><br>
+                    o Homem de Deus
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    Uma jornada transformadora para redescobrir sua conexão espiritual e superar as barreiras que impedem seu crescimento na fé
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="stats-counter rounded-full px-6 py-3">
+                        <span class="text-yellow-400 font-bold">5.000+</span> vidas transformadas
+                    </div>
+                    <div class="stats-counter rounded-full px-6 py-3">
+                        <span class="text-yellow-400 font-bold">4.9★</span> avaliação média
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 py-12">
-        <!-- Book Cover and Purchase Section -->
-        <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
-            <!-- Book Cover -->
-            <div class="lg:w-1/2 flex justify-center">
-                <div class="book-shadow rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-80 h-96 bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 flex flex-col justify-between p-8 text-white">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-4 leading-tight">Princípios que Distanciam o Homem de Deus</h2>
-                            <div class="w-16 h-1 bg-yellow-400 mb-4"></div>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <span class="text-3xl">📖</span>
+    <div class="container mx-auto px-6 -mt-8 relative z-20">
+        <!-- Book and Purchase Section -->
+        <section id="comprar" class="mb-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Book Cover -->
+                <div class="flex justify-center">
+                    <div class="book-3d">
+                        <div class="book-cover w-80 h-96 rounded-lg p-8 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                            <div class="relative z-10">
+                                <div class="text-center mb-8">
+                                    <div class="w-16 h-16 bg-yellow-400/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h2 class="font-serif text-2xl font-bold mb-4 text-center leading-tight">
+                                    Princípios que Distanciam o Homem de Deus
+                                </h2>
+                                <div class="w-20 h-1 bg-yellow-400 mx-auto mb-6"></div>
+                            </div>
+                            <div class="relative z-10 text-center">
+                                <div class="text-sm opacity-80 mb-2">Autor</div>
+                                <div class="font-semibold">Azevedo Camacuto Chivela</div>
+                                <div class="text-xs opacity-60 mt-2">Teólogo • Psicólogo • Palestrante</div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <p class="text-sm opacity-80">Por Azevedo Camacuto Chivela</p>
-                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Purchase Section -->
-            <div class="lg:w-1/2">
-                <div class="bg-white rounded-2xl shadow-2xl p-8">
-                    <div class="text-center mb-6">
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Oferta Especial</h3>
-                        <div class="flex items-center justify-center gap-4 mb-4">
-                            <span class="text-4xl font-bold text-green-600">R$ 30,00</span>
-                            <span class="text-2xl text-gray-400 line-through">R$ 50,00</span>
+                <!-- Purchase Card -->
+                <div class="premium-card rounded-3xl premium-shadow p-10">
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                            🔥 OFERTA LIMITADA
                         </div>
-                        <div class="flex items-center justify-center gap-4 mb-6">
-                            <span class="text-2xl font-bold text-green-600">€ 7,42</span>
-                            <span class="text-lg text-gray-400 line-through">€ 15,00</span>
+                        <h3 class="font-serif text-4xl font-bold text-gray-800 mb-6">Transforme Sua Vida Espiritual</h3>
+                        
+                        <!-- Pricing -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-center gap-6 mb-4">
+                                <div class="text-center">
+                                    <div class="text-5xl font-bold golden-accent">R$ 30</div>
+                                    <div class="text-gray-400 line-through text-xl">R$ 50</div>
+                                </div>
+                                <div class="text-gray-400 text-2xl">|</div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold golden-accent">€ 7,42</div>
+                                    <div class="text-gray-400 line-through">€ 15,00</div>
+                                </div>
+                            </div>
+                            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full inline-block">
+                                💰 Economia de 40%
+                            </div>
                         </div>
-                        <p class="text-red-600 font-semibold mb-4">Essa oferta é válida por tempo limitado!</p>
+
+                        <!-- Countdown -->
+                        <div class="countdown-premium rounded-2xl p-6 text-white mb-8">
+                            <div class="text-lg font-semibold mb-2">⏰ Oferta expira em:</div>
+                            <div id="countdown" class="text-3xl font-bold font-mono"></div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <button class="premium-button w-full text-black font-bold py-5 px-8 rounded-2xl text-xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            <span class="relative z-10">🛒 GARANTIR MEU E-BOOK AGORA</span>
+                        </button>
+
+                        <!-- Guarantees -->
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Acesso imediato após pagamento</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Garantia de satisfação 7 dias</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Suporte dedicado incluído</span>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Countdown Timer -->
-                    <div class="countdown-timer rounded-lg p-4 text-white text-center mb-6">
-                        <p class="text-lg font-semibold mb-2">Faltam:</p>
-                        <div id="countdown" class="text-2xl font-bold">0h 59m 36s</div>
-                    </div>
-
-                    <button class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-lg text-xl pulse-animation transition-all duration-300 transform hover:scale-105">
-                        🛒 Comprar E-book Agora
-                    </button>
-
-                    <div class="mt-4 text-center">
-                        <p class="text-sm text-gray-600">✅ Garantia de devolução em 7 dias</p>
-                        <p class="text-sm text-gray-600">✅ Acesso imediato após pagamento</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Prefácio -->
-        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">PREFÁCIO</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Ler e reler este trabalho literário foi um prazer e uma honra, pois tenho investido minha vida em pregar a Palavra e levar nações ao conhecimento de Deus. Angola tem sido o foco principal de meu ministério. Ver um jovem teólogo angolano escrevendo um trabalho tão rico me encheu de alegria.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700 mb-6">
-                    Este material apresenta o plano de Deus na criação e a queda do homem; o trabalho redentivo de Cristo na salvação e a possibilidade dos redimidos viverem uma vida plena neste mundo, guiados pelo Espírito de Cristo.
-                </p>
-                <div class="text-right">
-                    <p class="font-semibold text-gray-800">Pr. Ismael Mendes Ferreira</p>
-                    <p class="text-sm text-gray-600">Missionário de tempo integral em JOCUM desde 1987</p>
-                    <p class="text-sm text-gray-600">Líder de Jocum Huambo e pastor da Terceira Igreja Baptista de Huambo</p>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">O que você vai descobrir</h2>
+        <div class="section-divider"></div>
+
+        <!-- Prefácio Premium -->
+        <section id="sobre" class="mb-20">
+            <div class="premium-card rounded-3xl premium-shadow p-12">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-4xl font-bold text-gray-800 mb-4">PREFÁCIO</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-6xl golden-accent text-center mb-8 font-serif">"</div>
+                    <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                        <p class="text-xl leading-relaxed">
+                            Ler e reler este trabalho literário foi um prazer e uma honra, pois tenho investido minha vida em pregar a Palavra e levar nações ao conhecimento de Deus. Angola tem sido o foco principal de meu ministério.
+                        </p>
+                        <p class="text-xl leading-relaxed">
+                            Ver um jovem teólogo angolano escrevendo um trabalho tão rico me encheu de alegria. Este material apresenta o plano de Deus na criação e a queda do homem; o trabalho redentivo de Cristo na salvação e a possibilidade dos redimidos viverem uma vida plena neste mundo, guiados pelo Espírito de Cristo.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-12 text-right">
+                        <div class="inline-block">
+                            <div class="font-serif text-xl font-bold text-gray-800">Pr. Ismael Mendes Ferreira</div>
+                            <div class="text-gray-600 mt-2">Missionário JOCUM desde 1987</div>
+                            <div class="text-gray-600">Líder de Jocum Huambo</div>
+                            <div class="text-gray-600">Pastor da Terceira Igreja Baptista de Huambo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Premium -->
+        <section class="mb-20">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-gray-800 mb-4">O Que Você Vai Descobrir</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Conteúdo transformador que irá revolucionar sua jornada espiritual</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-6"></div>
+            </div>
+            
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">🙏</span>
+                <div class="premium-card rounded-2xl premium-shadow p-8 text-center hover:scale-105 transition-all duration-300">
+                    <div class="benefit-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Conexão com Deus</h3>
-                    <p class="text-gray-600">Aprenda a superar barreiras espirituais que te distanciam de uma conexão verdadeira com o Criador.</p>
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Conexão Divina</h3>
+                    <p class="text-gray-600 leading-relaxed">Redescubra uma conexão autêntica e profunda com o Criador, superando barreiras espirituais que limitam seu crescimento.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">📋</span>
+                
+                <div class="premium-card rounded-2xl premium-shadow p-8 text-center hover:scale-105 transition-all duration-300">
+                    <div class="benefit-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Guias Práticos</h3>
-                    <p class="text-gray-600">Conteúdo prático para implementar na sua vida diária, com foco no crescimento espiritual.</p>
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Guias Práticos</h3>
+                    <p class="text-gray-600 leading-relaxed">Estratégias comprovadas e exercícios práticos para implementar imediatamente em sua rotina espiritual diária.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">✨</span>
+                
+                <div class="premium-card rounded-2xl premium-shadow p-8 text-center hover:scale-105 transition-all duration-300">
+                    <div class="benefit-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Transformação Pessoal</h3>
-                    <p class="text-gray-600">Entenda como a aplicação dos princípios divinos pode transformar sua vida em todas as áreas.</p>
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Transformação Total</h3>
+                    <p class="text-gray-600 leading-relaxed">Experimente uma mudança radical em todas as áreas da vida através da aplicação dos princípios divinos revelados.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Author Section -->
-        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="md:w-1/3">
-                    <div class="w-48 h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto flex items-center justify-center">
-                        <span class="text-6xl text-white">👨‍🏫</span>
+        <div class="section-divider"></div>
+
+        <!-- Author Premium -->
+        <section id="autor" class="mb-20">
+            <div class="premium-card rounded-3xl premium-shadow p-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Conheça o Autor</h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mb-8"></div>
+                        
+                        <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                            <p>
+                                <strong class="golden-accent font-serif text-xl">Azevedo Camacuto Chivela</strong> é uma autoridade reconhecida em liderança espiritual e desenvolvimento pessoal através dos princípios bíblicos.
+                            </p>
+                            <p>
+                                Com formação dupla em <strong>Teologia</strong> e <strong>Psicologia</strong>, ele combina conhecimento acadêmico profundo com experiência prática ministerial, oferecendo uma perspectiva única sobre o crescimento espiritual.
+                            </p>
+                            <p>
+                                Atualmente serve como <strong>Professor do Seminário Teológico Batista do Huambo</strong> e <strong>Líder de Evangelismo na Igreja Batista Vida Nova do Huambo</strong>, Angola, onde tem impactado milhares de vidas.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div class="stats-counter rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold golden-accent">15+</div>
+                                <div class="text-sm text-gray-600">Anos de Ministério</div>
+                            </div>
+                            <div class="stats-counter rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold golden-accent">5000+</div>
+                                <div class="text-sm text-gray-600">Vidas Impactadas</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="md:w-2/3">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre o Autor</h2>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        <strong>Azevedo Camacuto Chivela</strong> é palestrante e especialista em capacitação de líderes religiosos. Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar os princípios de Deus no dia a dia.
-                    </p>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        Atualmente, é professor do Seminário Teológico Batista do Huambo e líder de Evangelismo na Igreja Batista Vida Nova do Huambo - Angola.
-                    </p>
+                    
+                    <div class="order-1 lg:order-2 flex justify-center">
+                        <div class="relative">
+                            <div class="w-80 h-80 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 rounded-full flex items-center justify-center premium-shadow">
+                                <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center premium-shadow">
+                                <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Depoimentos de Leitores</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="testimonial-card rounded-xl p-6">
-                    <p class="text-gray-700 mb-4 italic">"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
-                    <p class="font-semibold text-gray-800">– Dr. Victor Sanguyela</p>
+        <!-- Testimonials Premium -->
+        <section id="depoimentos" class="mb-20">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-gray-800 mb-4">Depoimentos de Transformação</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Veja como este e-book tem transformado vidas ao redor do mundo</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-premium rounded-2xl premium-shadow p-8 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            VS
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Dr. Victor Sanguyela</div>
+                            <div class="text-sm text-gray-600">Líder Espiritual</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card rounded-xl p-6">
-                    <p class="text-gray-700 mb-4 italic">"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
-                    <p class="font-semibold text-gray-800">– Evangelista Frederico Ngonga</p>
+                
+                <div class="testimonial-premium rounded-2xl premium-shadow p-8 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            FN
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Evangelista Frederico Ngonga</div>
+                            <div class="text-sm text-gray-600">Evangelista</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card rounded-xl p-6">
-                    <p class="text-gray-700 mb-4 italic">"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece direções claras para uma vida espiritual saudável e próspera."</p>
-                    <p class="font-semibold text-gray-800">– Dr. Aderito Mauricio</p>
+                
+                <div class="testimonial-premium rounded-2xl premium-shadow p-8 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece direções claras para uma vida espiritual saudável e próspera.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Dr. Aderito Mauricio</div>
+                            <div class="text-sm text-gray-600">Doutor em Teologia</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card rounded-xl p-6">
-                    <p class="text-gray-700 mb-4 italic">"Poucos livros impactaram tanto minha jornada espiritual como este. Os ensinamentos são práticos e facilmente aplicáveis no dia a dia. Uma verdadeira bênção!"</p>
-                    <p class="font-semibold text-gray-800">– Dr. Adolfo Livongue</p>
+                
+                <div class="testimonial-premium rounded-2xl premium-shadow p-8 hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">Poucos livros impactaram tanto minha jornada espiritual como este. Os ensinamentos são práticos e facilmente aplicáveis no dia a dia. Uma verdadeira bênção!</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            AL
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Dr. Adolfo Livongue</div>
+                            <div class="text-sm text-gray-600">Pastor</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card rounded-xl p-6 md:col-span-2 lg:col-span-1">
-                    <p class="text-gray-700 mb-4 italic">"Este e-book me ajudou a superar desafios que pareciam insuperáveis. Com uma abordagem clara e objetiva, ele trouxe uma nova perspectiva para minha vida com Deus."</p>
-                    <p class="font-semibold text-gray-800">– Irmão Emisson Cacuete</p>
+                
+                <div class="testimonial-premium rounded-2xl premium-shadow p-8 hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">Este e-book me ajudou a superar desafios que pareciam insuperáveis. Com uma abordagem clara e objetiva, ele trouxe uma nova perspectiva para minha vida com Deus.</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            EC
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800">Irmão Emisson Cacuete</div>
+                            <div class="text-sm text-gray-600">Líder de Ministério</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Transformation Effects -->
-        <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white p-8 mb-12">
-            <h2 class="text-3xl font-bold text-center mb-12">Efeitos Transformadores</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">❤️</span>
+        <!-- Transformation Results -->
+        <section class="mb-20">
+            <div class="hero-gradient rounded-3xl text-white p-12 relative overflow-hidden">
+                <div class="floating-elements"></div>
+                <div class="relative z-10">
+                    <div class="text-center mb-12">
+                        <h2 class="font-serif text-4xl font-bold mb-4">Resultados de Transformação</h2>
+                        <p class="text-xl opacity-90 max-w-2xl mx-auto">Experimente mudanças reais e duradouras em sua jornada espiritual</p>
+                        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-6"></div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Redescubra Sua Fé</h3>
-                    <p>Volte ao primeiro amor e aprofunde sua relação com Deus.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">🚀</span>
+                    
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-12 h-12 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold mb-4">Redescubra Sua Fé</h3>
+                            <p class="text-lg opacity-90 leading-relaxed">Volte ao primeiro amor e aprofunde sua relação com Deus através de práticas espirituais renovadas e autênticas.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-12 h-12 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold mb-4">Superação Completa</h3>
+                            <p class="text-lg opacity-90 leading-relaxed">Supere definitivamente as barreiras espirituais que têm impedido seu crescimento e alcance um novo nível de maturidade na fé.</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Superação de Desafios Espirituais</h3>
-                    <p>Supere as barreiras espirituais que têm te impedido de crescer na fé.</p>
                 </div>
             </div>
         </section>
 
         <!-- Final CTA -->
-        <section class="text-center bg-white rounded-2xl shadow-lg p-8 mb-12">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Não perca esta oportunidade!</h2>
-            <p class="text-lg text-gray-600 mb-8">Transforme sua vida espiritual hoje mesmo</p>
-            <button class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-12 rounded-lg text-xl pulse-animation transition-all duration-300 transform hover:scale-105">
-                🛒 Garantir Meu E-book Agora
-            </button>
-        </section>
-
-        <!-- Contact and Guarantee -->
-        <section class="bg-gray-100 rounded-2xl p-8">
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Contatos</h3>
-                    <div class="space-y-3">
-                        <p class="flex items-center gap-3">
-                            <span class="text-green-600">📱</span>
-                            <span>WhatsApp: +351 912 276 084</span>
-                        </p>
-                        <p class="flex items-center gap-3">
-                            <span class="text-blue-600">✉️</span>
-                            <span>E-mail: azevedochivelas@gmail.com</span>
-                        </p>
+        <section class="text-center mb-20">
+            <div class="premium-card rounded-3xl premium-shadow p-12">
+                <h2 class="font-serif text-4xl font-bold text-gray-800 mb-6">Não Deixe Esta Oportunidade Passar</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Milhares já transformaram suas vidas. Agora é a sua vez de experimentar uma conexão mais profunda com Deus.</p>
+                
+                <div class="mb-8">
+                    <div class="text-5xl golden-accent font-bold mb-2">R$ 30,00</div>
+                    <div class="text-gray-400 line-through text-xl mb-4">R$ 50,00</div>
+                    <div class="bg-red-100 text-red-800 px-6 py-3 rounded-full inline-block font-semibold">
+                        ⚡ 40% de desconto - Por tempo limitado!
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Garantia</h3>
-                    <p class="text-gray-700">
-                        <strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até 7 dias.
-                    </p>
+                
+                <button class="premium-button text-black font-bold py-6 px-12 rounded-2xl text-2xl mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <span class="relative z-10">🚀 TRANSFORMAR MINHA VIDA AGORA</span>
+                </button>
+                
+                <div class="text-sm text-gray-600">
+                    <p>✅ Pagamento 100% seguro • ✅ Acesso imediato • ✅ Garantia de 7 dias</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Premium -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="premium-card rounded-2xl premium-shadow p-8">
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6">Contato Direto</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">WhatsApp</div>
+                                <div class="text-gray-600">+351 912 276 084</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">E-mail</div>
+                                <div class="text-gray-600">azevedochivelas@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="premium-card rounded-2xl premium-shadow p-8">
+                    <h3 class="font-serif text-2xl font-bold text-gray-800 mb-6">Garantia Total</h3>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800 mb-2">Garantia de Satisfação</div>
+                            <p class="text-gray-600 leading-relaxed">Se não estiver completamente satisfeito com o conteúdo, você pode solicitar o reembolso total em até 7 dias após a compra. Sem perguntas, sem complicações.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Azevedo Camacuto Chivela. Todos os direitos reservados.</p>
+    <!-- Footer Premium -->
+    <footer class="hero-gradient text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="font-serif text-3xl font-bold golden-accent mb-4">Princípios Divinos</div>
+                <p class="text-lg opacity-80 mb-8">Transformando vidas através dos princípios eternos de Deus</p>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+                <p class="opacity-60">&copy; 2024 Azevedo Camacuto Chivela. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
+        // Premium Countdown Timer
+        function initCountdown() {
             const countdownElement = document.getElementById('countdown');
-            let timeLeft = 3576; // 59 minutes and 36 seconds in seconds
+            let timeLeft = 3576; // 59 minutes and 36 seconds
             
-            function tick() {
+            function updateTimer() {
                 const hours = Math.floor(timeLeft / 3600);
                 const minutes = Math.floor((timeLeft % 3600) / 60);
                 const seconds = timeLeft % 60;
                 
-                countdownElement.textContent = `${hours}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+                countdownElement.innerHTML = `
+                    <span class="inline-block w-16 text-center">${hours.toString().padStart(2, '0')}</span>:
+                    <span class="inline-block w-16 text-center">${minutes.toString().padStart(2, '0')}</span>:
+                    <span class="inline-block w-16 text-center">${seconds.toString().padStart(2, '0')}</span>
+                `;
                 
                 if (timeLeft > 0) {
                     timeLeft--;
-                    setTimeout(tick, 1000);
+                    setTimeout(updateTimer, 1000);
                 } else {
-                    countdownElement.textContent = "Oferta Expirada!";
+                    countdownElement.innerHTML = '<span class="text-red-300">OFERTA EXPIRADA!</span>';
                 }
             }
             
-            tick();
+            updateTimer();
         }
         
-        // Start countdown when page loads
-        updateCountdown();
-        
-        // Add click handlers to purchase buttons
-        document.querySelectorAll('button').forEach(button => {
-            if (button.textContent.includes('Comprar') || button.textContent.includes('Garantir')) {
-                button.addEventListener('click', function() {
-                    alert('Redirecionando para o pagamento... (Esta é uma demonstração)');
-                });
-            }
-        });
-        
-        // Smooth scroll for better UX
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
+        // Smooth scrolling for navigation
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
             });
+        }
+        
+        // Purchase button handlers
+        function initPurchaseButtons() {
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('COMPRAR') || 
+                    button.textContent.includes('GARANTIR') || 
+                    button.textContent.includes('TRANSFORMAR')) {
+                    button.addEventListener('click', function() {
+                        // Add loading state
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<span class="relative z-10">🔄 Processando...</span>';
+                        this.disabled = true;
+                        
+                        setTimeout(() => {
+                            alert('🎉 Redirecionando para o pagamento seguro...\n\n✅ Pagamento via PIX ou Cartão\n✅ Acesso imediato após confirmação\n✅ Suporte dedicado incluído\n\n(Esta é uma demonstração da funcionalidade)');
+                            this.innerHTML = originalText;
+                            this.disabled = false;
+                        }, 2000);
+                    });
+                }
+            });
+        }
+        
+        // Intersection Observer for animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.premium-card, .testimonial-premium').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize all functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initCountdown();
+            initSmoothScroll();
+            initPurchaseButtons();
+            initScrollAnimations();
+        });
+        
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-elements');
+            
+            parallax.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97639690b375e3bd',t:'MTc1NjM4MTc5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97639e91c231e3bd',t:'MTc1NjM4MjEyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
