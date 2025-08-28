@@ -1,926 +1,317 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azevedo Chivela - Autor, Teólogo e Palestrante</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Princípios que Distanciam o Homem de Deus - E-book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Variáveis de cores e fontes */
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #e63946;
-            --accent-color: #f6ad55;
-            --light-color: #f7f9fc;
-            --dark-color: #2d3748;
-            --text-color: #4a5568;
-            --white: #ffffff;
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --font-heading: 'Georgia', serif;
-        }
-
-        /* Reset e estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            font-family: var(--font-main);
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--light-color);
+            font-family: 'Inter', sans-serif;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
-        a:hover {
-            color: var(--secondary-color);
+        
+        .book-shadow {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
-
-        /* Header */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        .countdown-timer {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
         }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            font-family: var(--font-heading);
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            font-weight: 500;
-            position: relative;
-        }
-
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), 
-                        url('imagens/hero-bg.jpg') no-repeat center center/cover;
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-family: var(--font-heading);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #c1121f;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* About Author */
-        .about-author {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            font-family: var(--font-heading);
-        }
-
-        .author-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .author-image {
-            flex: 0 0 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .author-bio {
-            flex: 1;
-        }
-
-        .author-bio h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .author-bio p {
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Books Section */
-        .books {
-            padding: 80px 0;
-            background-color: var(--light-color);
-        }
-
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .book-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .book-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .book-cover {
-            height: 350px;
-            overflow: hidden;
-        }
-
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .book-card:hover .book-cover img {
-            transform: scale(1.05);
-        }
-
-        .book-info {
-            padding: 20px;
-        }
-
-        .book-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .book-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .book-description {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
+        
         .testimonial-card {
-            background-color: var(--light-color);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            font-size: 5rem;
-            color: rgba(230, 57, 70, 0.1);
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-family: var(--font-heading);
-        }
-
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        /* Blog/Articles */
-        .articles {
-            padding: 80px 0;
-            background-color: var(--light-color);
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .article-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .article-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .article-card:hover .article-image img {
-            transform: scale(1.1);
-        }
-
-        .article-content {
-            padding: 20px;
-        }
-
-        .article-date {
-            font-size: 0.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .article-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .article-excerpt {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .read-more {
-            color: var(--secondary-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .contact-icon {
-            margin-right: 15px;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-        }
-
-        /* Newsletter */
-        .newsletter {
-            padding: 50px 0;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .newsletter-form button {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: var(--white);
-            padding: 40px 0 20px;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: var(--font-heading);
-        }
-
-        .footer-logo span {
-            color: var(--accent-color);
-        }
-
-        .footer-about p {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .footer-links h4,
-        .footer-contact h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .author-content {
-                flex-direction: column;
-            }
-
-            .author-image {
-                flex: 0 0 auto;
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                padding: 20px 0;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                border-radius: 5px;
-                width: 100%;
-            }
-
-            .newsletter-form button {
-                padding: 12px 0;
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 80px 0;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid #667eea;
         }
     </style>
 </head>
-
-<body>
+<body class="bg-gray-50">
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">Azevedo<span>Chivela</span></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul id="mainMenu">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#books">Livros</a></li>
-                    <li><a href="#articles">Artigos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Princípios que Distanciam o Homem de Deus</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Descubra como superar as barreiras espirituais</p>
+            <p class="text-lg max-w-3xl mx-auto leading-relaxed">Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia prático para restabelecer e fortalecer sua conexão espiritual.</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Conhecimento Teológico para Transformação Espiritual</h1>
-            <p>Explore os livros e artigos de Azevedo Chivela, dedicados ao crescimento espiritual e entendimento bíblico profundo.</p>
-            <a href="#books" class="btn">Ver Livros</a>
-        </div>
-    </section>
-
-    <!-- About Author -->
-    <section class="about-author" id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre o Autor</h2>
-            <div class="author-content">
-                <div class="author-image">
-                    <img src="imagens/imagem Azevedo.webp" alt="Azevedo Chivela">
-                </div>
-                <div class="author-bio">
-                    <h3>Azevedo Camacuto Chivela</h3>
-                    <p>Teólogo, psicólogo e escritor angolano dedicado ao estudo e ensino das Escrituras Sagradas. Com formação acadêmica sólida e vasta experiência ministerial, Azevedo Chivela tem se destacado como um dos pensadores cristãos mais relevantes de sua geração.</p>
-                    <p>Atualmente serve como professor no Seminário Teológico Batista do Huambo e líder de Evangelismo na Igreja Batista Vida Nova do Huambo, Angola. Seus escritos abordam temas profundos da fé cristã com clareza e aplicação prática para a vida moderna.</p>
-                    <p>Além de sua atividade acadêmica e pastoral, Azevedo é palestrante requisitado em conferências e eventos teológicos, onde compartilha seus insights sobre espiritualidade, liderança cristã e formação de discípulos.</p>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Books Section -->
-    <section class="books" id="books">
-        <div class="container">
-            <h2 class="section-title">Livros Publicados</h2>
-            <div class="books-grid">
-                <!-- Book 1 -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="imagens/Design sem nome.png" alt="Princípios que Distanciam o Homem de Deus">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">Princípios que Distanciam o Homem de Deus</h3>
-                        <div class="book-price">R$ 30,00 / € 7,42</div>
-                        <p class="book-description">Este e-book transformador revela princípios que podem afastar o homem de Deus, oferecendo um guia prático para restabelecer e fortalecer sua conexão espiritual.</p>
-                        <a href="https://pay.hotmart.com/I95306645C" class="btn" target="_blank">Comprar Agora</a>
-                    </div>
-                </div>
-                
-                <!-- Book 2 - Placeholder for future books -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="imagens/book-placeholder.jpg" alt="Próximo Lançamento">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">Próximo Lançamento</h3>
-                        <div class="book-price">Em breve</div>
-                        <p class="book-description">Novo livro em preparação. Cadastre-se para ser notificado quando estiver disponível.</p>
-                        <a href="#newsletter" class="btn">Avisar-me</a>
-                    </div>
-                </div>
-                
-                <!-- Book 3 - Placeholder for future books -->
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="imagens/book-placeholder.jpg" alt="Próximo Lançamento">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">Próximo Lançamento</h3>
-                        <div class="book-price">Em breve</div>
-                        <p class="book-description">Novo projeto em desenvolvimento. Fique atento para mais informações.</p>
-                        <a href="#newsletter" class="btn">Avisar-me</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Depoimentos</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
-                    <p class="testimonial-author">Dr. Victor Sanguyela</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
-                    <p class="testimonial-author">Evangelista Frederico Ngonga</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece direções claras para uma vida espiritual saudável e próspera."</p>
-                    <p class="testimonial-author">Dr. Aderito Mauricio</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles/Blog -->
-    <section class="articles" id="articles">
-        <div class="container">
-            <h2 class="section-title">Artigos Recentes</h2>
-            <div class="articles-grid">
-                <!-- Article 1 -->
-                <div class="article-card">
-                    <div class="article-image">
-                        <img src="imagens/article1.jpg" alt="Artigo 1">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-date">15 Junho 2023</div>
-                        <h3 class="article-title">Os Desafios da Fé no Mundo Contemporâneo</h3>
-                        <p class="article-excerpt">Como manter uma vida espiritual vibrante em meio às demandas da vida moderna e às transformações sociais...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </div>
-                
-                <!-- Article 2 -->
-                <div class="article-card">
-                    <div class="article-image">
-                        <img src="imagens/article2.jpg" alt="Artigo 2">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-date">28 Maio 2023</div>
-                        <h3 class="article-title">A Importância do Discipulado na Igreja Atual</h3>
-                        <p class="article-excerpt">Reflexões sobre o processo de formação de discípulos e seu papel fundamental no crescimento saudável das comunidades cristãs...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </div>
-                
-                <!-- Article 3 -->
-                <div class="article-card">
-                    <div class="article-image">
-                        <img src="imagens/article3.jpg" alt="Artigo 3">
-                    </div>
-                    <div class="article-content">
-                        <div class="article-date">10 Abril 2023</div>
-                        <h3 class="article-title">Interpretação Bíblica: Entre a Tradição e a Inovação</h3>
-                        <p class="article-excerpt">Como equilibrar a fidelidade às tradições interpretativas com as novas abordagens hermenêuticas que surgem a cada geração...</p>
-                        <a href="#" class="read-more">Ler mais →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informações de Contato</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <p>Huambo, Angola</p>
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Book Cover and Purchase Section -->
+        <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
+            <!-- Book Cover -->
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="book-shadow rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <div class="w-80 h-96 bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 flex flex-col justify-between p-8 text-white">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 leading-tight">Princípios que Distanciam o Homem de Deus</h2>
+                            <div class="w-16 h-1 bg-yellow-400 mb-4"></div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-3xl">📖</span>
                             </div>
-                            <p><a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <p><a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
+                        <div class="text-center">
+                            <p class="text-sm opacity-80">Por Azevedo Camacuto Chivela</p>
                         </div>
                     </div>
-                    <h3>Redes Sociais</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-                    </div>
                 </div>
-                <div class="contact-form">
-                    <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
-                        <input type="email" name="email" placeholder="Seu E-mail" required>
-                        <input type="text" name="subject" placeholder="Assunto">
-                        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
-                    </form>
+            </div>
+
+            <!-- Purchase Section -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Oferta Especial</h3>
+                        <div class="flex items-center justify-center gap-4 mb-4">
+                            <span class="text-4xl font-bold text-green-600">R$ 30,00</span>
+                            <span class="text-2xl text-gray-400 line-through">R$ 50,00</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 mb-6">
+                            <span class="text-2xl font-bold text-green-600">€ 7,42</span>
+                            <span class="text-lg text-gray-400 line-through">€ 15,00</span>
+                        </div>
+                        <p class="text-red-600 font-semibold mb-4">Essa oferta é válida por tempo limitado!</p>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="countdown-timer rounded-lg p-4 text-white text-center mb-6">
+                        <p class="text-lg font-semibold mb-2">Faltam:</p>
+                        <div id="countdown" class="text-2xl font-bold">0h 59m 36s</div>
+                    </div>
+
+                    <button class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-lg text-xl pulse-animation transition-all duration-300 transform hover:scale-105">
+                        🛒 Comprar E-book Agora
+                    </button>
+
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-600">✅ Garantia de devolução em 7 dias</p>
+                        <p class="text-sm text-gray-600">✅ Acesso imediato após pagamento</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" id="newsletter">
-        <div class="container">
-            <h3>Assine nossa Newsletter</h3>
-            <p>Receba atualizações sobre novos livros, artigos e eventos.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Seu melhor e-mail" required>
-                <button type="submit">Assinar</button>
-            </form>
-        </div>
-    </section>
+        <!-- Prefácio -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">PREFÁCIO</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Ler e reler este trabalho literário foi um prazer e uma honra, pois tenho investido minha vida em pregar a Palavra e levar nações ao conhecimento de Deus. Angola tem sido o foco principal de meu ministério. Ver um jovem teólogo angolano escrevendo um trabalho tão rico me encheu de alegria.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                    Este material apresenta o plano de Deus na criação e a queda do homem; o trabalho redentivo de Cristo na salvação e a possibilidade dos redimidos viverem uma vida plena neste mundo, guiados pelo Espírito de Cristo.
+                </p>
+                <div class="text-right">
+                    <p class="font-semibold text-gray-800">Pr. Ismael Mendes Ferreira</p>
+                    <p class="text-sm text-gray-600">Missionário de tempo integral em JOCUM desde 1987</p>
+                    <p class="text-sm text-gray-600">Líder de Jocum Huambo e pastor da Terceira Igreja Baptista de Huambo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">O que você vai descobrir</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🙏</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Conexão com Deus</h3>
+                    <p class="text-gray-600">Aprenda a superar barreiras espirituais que te distanciam de uma conexão verdadeira com o Criador.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📋</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Guias Práticos</h3>
+                    <p class="text-gray-600">Conteúdo prático para implementar na sua vida diária, com foco no crescimento espiritual.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">✨</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Transformação Pessoal</h3>
+                    <p class="text-gray-600">Entenda como a aplicação dos princípios divinos pode transformar sua vida em todas as áreas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Author Section -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <div class="w-48 h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto flex items-center justify-center">
+                        <span class="text-6xl text-white">👨‍🏫</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre o Autor</h2>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        <strong>Azevedo Camacuto Chivela</strong> é palestrante e especialista em capacitação de líderes religiosos. Formado em Teologia e Psicologia, ele dedica sua vida a ajudar pessoas a entender e aplicar os princípios de Deus no dia a dia.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Atualmente, é professor do Seminário Teológico Batista do Huambo e líder de Evangelismo na Igreja Batista Vida Nova do Huambo - Angola.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Depoimentos de Leitores</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="testimonial-card rounded-xl p-6">
+                    <p class="text-gray-700 mb-4 italic">"Este e-book foi uma verdadeira revelação. Ele trouxe luz para áreas da minha vida espiritual que estavam sendo negligenciadas. Recomendo a todos que buscam um crescimento genuíno na fé."</p>
+                    <p class="font-semibold text-gray-800">– Dr. Victor Sanguyela</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-6">
+                    <p class="text-gray-700 mb-4 italic">"Os princípios abordados neste livro são transformadores. Aplicar os ensinamentos tem me ajudado a ser um líder espiritual mais eficaz e uma pessoa mais próxima de Deus."</p>
+                    <p class="font-semibold text-gray-800">– Evangelista Frederico Ngonga</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-6">
+                    <p class="text-gray-700 mb-4 italic">"Uma leitura indispensável para quem quer se aprofundar nos ensinamentos bíblicos. Este livro oferece direções claras para uma vida espiritual saudável e próspera."</p>
+                    <p class="font-semibold text-gray-800">– Dr. Aderito Mauricio</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-6">
+                    <p class="text-gray-700 mb-4 italic">"Poucos livros impactaram tanto minha jornada espiritual como este. Os ensinamentos são práticos e facilmente aplicáveis no dia a dia. Uma verdadeira bênção!"</p>
+                    <p class="font-semibold text-gray-800">– Dr. Adolfo Livongue</p>
+                </div>
+                <div class="testimonial-card rounded-xl p-6 md:col-span-2 lg:col-span-1">
+                    <p class="text-gray-700 mb-4 italic">"Este e-book me ajudou a superar desafios que pareciam insuperáveis. Com uma abordagem clara e objetiva, ele trouxe uma nova perspectiva para minha vida com Deus."</p>
+                    <p class="font-semibold text-gray-800">– Irmão Emisson Cacuete</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformation Effects -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white p-8 mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Efeitos Transformadores</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">❤️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Redescubra Sua Fé</h3>
+                    <p>Volte ao primeiro amor e aprofunde sua relação com Deus.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Superação de Desafios Espirituais</h3>
+                    <p>Supere as barreiras espirituais que têm te impedido de crescer na fé.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="text-center bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Não perca esta oportunidade!</h2>
+            <p class="text-lg text-gray-600 mb-8">Transforme sua vida espiritual hoje mesmo</p>
+            <button class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-12 rounded-lg text-xl pulse-animation transition-all duration-300 transform hover:scale-105">
+                🛒 Garantir Meu E-book Agora
+            </button>
+        </section>
+
+        <!-- Contact and Guarantee -->
+        <section class="bg-gray-100 rounded-2xl p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Contatos</h3>
+                    <div class="space-y-3">
+                        <p class="flex items-center gap-3">
+                            <span class="text-green-600">📱</span>
+                            <span>WhatsApp: +351 912 276 084</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <span class="text-blue-600">✉️</span>
+                            <span>E-mail: azevedochivelas@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Garantia</h3>
+                    <p class="text-gray-700">
+                        <strong>Garantia de Devolução:</strong> Se não estiver satisfeito, você pode solicitar a devolução em até 7 dias.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <div class="footer-logo">Azevedo<span>Chivela</span></div>
-                    <p>Portal oficial do autor Azevedo Chivela, dedicado ao compartilhamento de conhecimento teológico e reflexões espirituais para o crescimento cristão.</p>
-                    <p>© 2023 Todos os direitos reservados.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#books">Livros</a></li>
-                        <li><a href="#articles">Artigos</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Huambo, Angola</p>
-                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/351912276084" target="_blank">+351 912 276 084</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:aureliochivelachivela@gmail.com">aureliochivelachivela@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Azevedo Chivela. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
-            </div>
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Azevedo Camacuto Chivela. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainMenu = document.getElementById('mainMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mainMenu.classList.toggle('show');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let timeLeft = 3576; // 59 minutes and 36 seconds in seconds
+            
+            function tick() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                countdownElement.textContent = `${hours}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
                 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mainMenu.classList.contains('show')) {
-                        mainMenu.classList.remove('show');
-                    }
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    setTimeout(tick, 1000);
+                } else {
+                    countdownElement.textContent = "Oferta Expirada!";
                 }
-            });
-        });
-
-        // Sticky header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
+            }
+            
+            tick();
+        }
+        
+        // Start countdown when page loads
+        updateCountdown();
+        
+        // Add click handlers to purchase buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Comprar') || button.textContent.includes('Garantir')) {
+                button.addEventListener('click', function() {
+                    alert('Redirecionando para o pagamento... (Esta é uma demonstração)');
+                });
             }
         });
+        
+        // Smooth scroll for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
     </script>
-</body>
-
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97639690b375e3bd',t:'MTc1NjM4MTc5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
